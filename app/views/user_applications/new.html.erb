@@ -1,0 +1,55 @@
+<%= content_for(:navbar) do %>
+  <%= render 'shared/form_navbar', flat: @flat %>
+<% end %>
+
+<div class="very-small-container text-center" id="application-form">
+    <%= simple_form_for([@flat, @user_application] ) do |f| %>
+      <%= f.error_notification %>
+
+      <div id="step1">
+        <div class="form-intro text-center">
+          <h5>Etape 1 sur 2</h5>
+          <p class="form-question text-center">Juste quelques informations à nous donner pour que nous puissions vous recontacter</p>
+        </div>
+
+        <div class="text-center">
+          <p class="form-question text-center">Quel est votre nom ?</p>
+          <%= f.input :applicant_name, placeholder: "Jean Dupont", label: false %>
+          <p class="form-question text-center">Quel est votre email ?</p>
+          <%= f.input :applicant_email, placeholder: "email", label: false %>
+          <p class="form-question text-center">Quel est votre numéro de téléphone ?</p>
+          <%= f.input :applicant_phone_number, placeholder: "06 ## ## ## ##", label: false %>
+        </div>
+      </div>
+
+      <div id="show-step2-btn" class="btn-initial">Valider</div>
+
+      <div id="step2" class="hidden">
+        <div class="form-intro text-center">
+          <h5>Etape 2 sur 2</h5>
+          <p class="form-question text-center">Votre dossier, vos colocs ...</p>
+        </div>
+        <div class="text-center">
+          <p class="form-question text-center">Informations sur les futurs locataires</p>
+          <h6>(âge, programme d'étude, sexe, durée de location, etc)</h6>
+          <%= f.input :applicant_infos, label: false %>
+        </div>
+        <div class="start-flexbox space-between">
+          <p class="flex-third no-margin form-secondary-question">Avez-vous des garants ?</p>
+          <div id="warrant-form-input" class="flex-half start-flexbox">
+            <%= f.collection_check_boxes :warrant, [[true, 'Oui'] ,[false, 'Non']], :first, :last, required: true %>
+          </div>
+        </div>
+        <div class="start-flexbox space-between">
+          <p class="flex-third no-margin form-secondary-question">Souhaitez-vous une visite physique du bien ?</p>
+          <div id="visit-form-input" class="flex-half start-flexbox">
+            <%= f.collection_check_boxes :visit_needed, [[true, 'Oui, indispensable'] ,[false, "Non, j'ai vu la visite virtuelle"]], :first, :last %>
+          </div>
+        </div>
+      </div>
+
+      <div id="submit-btn" class="hidden">
+        <%= f.submit "Terminé", class: "btn-initial text-center" %>
+    </div>
+    <% end %>
+</div>

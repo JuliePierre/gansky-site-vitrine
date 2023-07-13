@@ -1,0 +1,78 @@
+.flat-card {
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 300px;
+  margin-bottom: 1rem;
+  position: relative;
+  &:hover {
+    background-color: white;
+    opacity: 0.8;
+  }
+  @media (max-width: $small-screen) {
+    height: 240px;
+  }
+}
+.flat-card-header {
+  color: white;
+  text-align: center;
+  font-weight: 500;
+  h3 {
+    font-size: 30px;
+    margin: 0;
+    @media (max-width: $small-screen) {
+      font-size: 24px;
+    }
+  }
+}
+.flat-card-infos {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  background-color: $brand-dark-grey;
+  color: white;
+  font-weight: 500;
+}
+.general-infos {
+  flex: 0 0 70%;
+  padding: 0.75rem 1rem;
+}
+.disponibility {
+  text-align: center;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  flex: 0 0 30%;
+  &.occupied {
+    background-color: $brand-blue;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  &.free {
+    background-color: $brand-green;
+  }
+}
+.infos-sub-header {
+  font-size: 16px;
+  @media (max-width: $small-screen) {
+    font-size: 14px;
+  }
+}
+.infos-subtitle {
+  font-size: 12px;
+  @media (max-width: $small-screen) {
+    font-size: 11px;
+  }
+  font-weight: 400;
+}
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}

@@ -1,0 +1,41 @@
+// Other navbar
+.navbar {
+  height: 65px;
+  padding: 1rem 0;
+  margin-bottom: 0 !important;
+  @media (max-width: $small-screen) {
+    height: 56px;
+  }
+  .container {
+    height: 100%;
+  }
+}
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#brand {
+  height: 100%;
+  position: relative;
+  img {
+    height: 100%;
+  }
+  @media (max-width: $small-screen) {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+.navbar-links {
+  font-size: 1rem;
+  font-weight: 500;
+   a {
+    margin-left: 1rem;
+    color: $brand-text-grey;
+  }
+  .see-flats-button {
+    margin-left: 1rem;
+    color: $brand-text-grey;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,27 @@
+#footer {
+  background-color: $brand-dark-grey;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  color: white;
+  &.full-bottom {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  .footer-infos {
+    span {
+      margin-right: 1rem;
+    }
+    a {
+      color: white;
+    }
+  }
+}
+.footer-first-line {
+  font-weight: 500;
+}
+.footer-copyright {
+  font-weight: 400;
+  font-size: 0.8rem;
+}

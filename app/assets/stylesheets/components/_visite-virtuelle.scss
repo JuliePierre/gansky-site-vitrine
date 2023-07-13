@@ -1,0 +1,80 @@
+.visite-virtuelle-trigger-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.visite-virtuelle-trigger {
+  background-position: center;
+  height: 350px;
+  width: 80%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  @media (max-width: $small-screen) {
+    height: 200px;
+    margin-bottom: 4rem;
+  }
+  .visite-virtuelle-trigger-wrapper {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: white;
+    opacity: 0.4;
+    display: none;
+    z-index: 1;
+  }
+  .visite-virtuelle-texte {
+    font-size: 28px;
+    color: $brand-text-grey;
+    display: none;
+    z-index: 2;
+  }
+  &:hover {
+    .visite-virtuelle-trigger-wrapper {
+      display: initial;
+    }
+    .visite-virtuelle-texte {
+      display: initial;
+    }
+  }
+}
+.visite-virtuelle-trigger-for-mobile {
+  position: relative;
+  a {
+    z-index: 1000;
+  }
+}
+.visite-virtuelle-container {
+  position: fixed;
+  top: 50px;
+  bottom: 50px;
+  right: 50px;
+  left: 50px;
+  background-color: white;
+  z-index: 3;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+.visite-virtuelle-controls {
+  font-size: 25px;
+  color: $brand-text-grey;
+  position: absolute;
+  top: 10px;
+  z-index: 10000;
+  right: 20px;
+}
+#visite-virtuelle-close {
+  cursor: pointer;
+  z-index: 4
+}
+.visite-virtuelle-iframe {
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+  left: 50px;
+  top: 50px;
+  z-index: 4
+}

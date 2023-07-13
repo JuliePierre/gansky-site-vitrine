@@ -1,0 +1,137 @@
+#application-form {
+  margin-top: 1.5rem;
+}
+#confirmation-page {
+  margin-top: 5rem;
+}
+#new_user_application {
+  .col {
+    display: inline-block;
+    float: initial;
+  }
+  input::placeholder {
+    text-align: center;
+  }
+  input[type=name], input[type=text], input[type=number], input[type=tel], input[type=email] {
+    text-align: center;
+    font-size: 1.2rem;
+    height: 2.5rem;
+    font-weight: 200;
+    color: $brand-text-grey;
+    @media (max-width: $small-screen) {
+      font-size: 1rem;
+      height: 1.5rem;
+    }
+  }
+  .input-field {
+    margin-top: 0;
+    width: 52%;
+  }
+}
+.form-intro {
+  h5 {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+    margin-bottom: 0.25rem;
+  }
+  p {
+    margin: 0;
+    font-size: 0.85rem;
+    font-weight: 400;
+    padding: 0 6rem;
+    line-height: 1rem;
+    @media (max-width: $small-screen) {
+      padding: 0 0.5rem;
+      font-size: 0.9rem;
+    }
+    @media (max-width: $very-small-screen) {
+      font-size: 0.7rem;
+    }
+  }
+}
+.form-question {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: $brand-text-grey;
+  letter-spacing: 1.5px;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  @media (max-width: $small-screen) {
+    font-size: 1rem;
+    margin-bottom: 0;
+  }
+  @media (max-width: $very-small-screen) {
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+  }
+}
+#show-step2-btn {
+  margin-top: 2rem;
+  @media (max-width: $very-small-screen) {
+    margin-top: 0.5rem;
+  }
+}
+#step2 {
+  margin-top: 6rem;
+  @media (max-width: $small-screen) {
+    margin-top: 2rem;
+  }
+  h6 {
+    font-size: 1rem;
+    padding: 0 6rem;
+    line-height: 1rem;
+    margin: 0;
+    @media (max-width: $small-screen) {
+      font-size: 0.8rem;
+      padding: 0;
+    }
+  }
+
+}
+.user_application_applicant_infos {
+  width: 100% !important;
+  margin-bottom: 2rem;
+  textarea {
+    height: 15rem;
+    border-radius: 10px;
+    padding: 1rem 1rem;
+    border: 1px solid $brand-bg-grey;
+    margin-top: 1rem;
+    width: 80%;
+  }
+  textarea:focus {
+    border-bottom: 1px solid $brand-bg-grey !important;
+    box-shadow: none !important;
+  }
+}
+.form-secondary-question {
+  color: $brand-text-grey;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  @media (max-width:$small-screen) {
+    font-size: 0.8rem;
+  }
+}
+#warrant-form-input, #visit-form-input {
+  text-align: initial;
+  label {
+    text-align: initial;
+    @media (max-width: $small-screen) {
+      text-align: initial;
+      font-size: 0.8rem;
+      line-height: 0.8rem;
+      height: 0.8rem;
+      padding-left: 30px;
+    }
+  }
+  @media (max-width: $small-screen) {
+    flex: 0 0 66%;
+  }
+}
+.darth-vador-picture {
+  height: 200px;
+  margin-bottom: 2rem;
+}

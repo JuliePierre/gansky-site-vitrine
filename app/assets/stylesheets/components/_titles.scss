@@ -1,0 +1,30 @@
+.sub-header {
+  text-transform: uppercase;
+  font-size: 22px;
+  font-weight: 500;
+  padding-top: 50px;
+  margin-bottom: 50px;
+  margin-top: 0;
+  @media (max-width: $small-screen) {
+    font-size: 18px;
+    padding-top: 20px;
+    margin-bottom: 20px;
+    margin-top: 0;
+  }
+}
+.content-sub-header {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  @media (max-width: $small-screen) {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+}
+.small-text {
+  font-weight: initial;
+  font-size: 12px;
+}
+.very-small-text {
+  font-size: 0.7rem;
+}

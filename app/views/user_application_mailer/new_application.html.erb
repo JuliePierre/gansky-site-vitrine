@@ -1,0 +1,10 @@
+<h3>Nouvelle demande de dossier pour <%= @flat.name %></h3>
+<p>Vous avez reçu une nouvelle demande de dossier pour l'appartement <%= @flat.name %> dont vous trouverez le détail ci-dessous</p>
+<ul>
+  <li>De la part de : <%= @user.applicant_name %></li>
+  <li>Email : <%= @user.applicant_email %></li>
+  <li>Téléphone : <%= @user.applicant_phone_number %></li>
+  <li>Visite demandée ? <%= @user.visit_needed ? "Oui" : "Non" %></li>
+</ul>
+<p>Il/Elle a laissé le message suivant pour vous :</p>
+<p><%= @user.applicant_infos %></p>

@@ -1,0 +1,101 @@
+<%= content_for(:navbar) do %>
+  <%= render 'shared/navbar' %>
+<% end %>
+
+<div id="landing-banner" class="flexbox column space-between">
+  <div id="landing-background" style="background-image: url(<%= image_url('landing-background.jpg') %>);">
+    <div id="landing-background-infos">
+      <%= image_tag 'icon-home.png', id: "landing-bg-icon" %>
+      <h2 class="header">La coloc' idéale</h2>
+      <p class="subtitle">Les meilleurs offres de colocation à Cergy Préfecture</p>
+      <div id="see-flats-button" class="see-flats-button btn-gansky">Voir les appartements<i class="fa fa-search" aria-hidden="true"></i></div>
+    </div>
+  </div>
+  <div id="landing-explanation" class="bg-grey">
+    <div class="container explanation-content">
+      <div class="content-item">
+        <div class="content-header center-flexbox">
+          <%= image_tag 'icon-table.svg', class: 'landing-icon' %>
+          <div class="left-padded">
+            Des colocs entièrement <span class="red-text">meublées et équipées</span>
+          </div>
+        </div>
+<!--         <div class="hide-on-small-only">
+          Des lits 2 places à la machine à café, en passant par le lave-vaisselle et la TV écran plat... Venez uniquement avec vos valises, tout est là !
+        </div> -->
+      </div>
+      <div class="content-item">
+        <div class="content-header center-flexbox">
+          <%= image_tag 'icon-key.svg', class: 'landing-icon' %>
+          <div class="left-padded">
+            Des prix <span class="red-text">tout compris </span>et pas de suprise
+          </div>
+        </div>
+<!--         <div class="hide-on-small-only">
+          Wifi, électricité, chauffage, eau, charges de copro, tout est inclus et vous n’avez rien d’autre à payer. Pas de frais d’agence et seulement un mois de garantie.
+        </div> -->
+      </div>
+      <div class="content-item">
+        <div class="content-header center-flexbox">
+          <%= image_tag 'icon-web.svg', class: 'landing-icon' %>
+          <div class="left-padded">
+            Simple et facile intégralement en ligne
+          </div>
+        </div>
+<!--         <div class="hide-on-small-only">
+          Visitez et réservez votre appartement en ligne. Déposez votre dossier et signez votre bail sans avoir à vous déplacer.
+        </div> -->
+      </div>
+    </div>
+  </div>
+</div>
+<div id="landing-flats" class="small-container">
+  <h3 class="text-center sub-header">Découvrir les appartements</h3>
+  <div class="row">
+    <% @flats.each do |flat| %>
+      <div class="col s12 m6">
+      <% if flat.cover_picture.attached? %>
+        <% cover_picture = cl_image_path flat.cover_picture.key %>
+      <% else %>
+        <% cover_picture = image_path "photo-generique-appartement.jpg" %>
+      <% end %>
+        <div class="flat-card" style="background-image: linear-gradient(135deg, rgba(150,109,105,0.2), rgba(150,109,105,0.4)), url('<%= cover_picture %>');">
+          <div class="flat-card-header">
+            <h3><%= flat.name %></h3>
+            <div class="small-line-container">
+              <div class="small-horizontal-line"></div>
+            </div>
+            <div><%= flat.neighborhood %></div>
+          </div>
+          <div class="flat-card-infos">
+            <div class="general-infos">
+              <div class="infos-sub-header"><%= flat.nb_rooms %> Chambres</div>
+              <div class="infos-subtitle"><%= flat.address %></div>
+            </div>
+            <% if flat.occupied %>
+              <div class="disponibility occupied">
+                Déjà Loué
+              </div>
+            <% else %>
+              <div class="disponibility free">
+                <div class="infos-sub-header">Disponible</div>
+                <% if flat.availability_date %>
+                  <% formated_date = flat.availability_date %>
+                <% end %>
+                <div class="infos-subtitle"><%= l(formated_date, format: :long) %></div>
+              </div>
+            <% end %>
+          </div>
+          <%= link_to "", flat_path(flat), class: "card-link" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<%#= image_tag 'carte-cergy.png',  %>
+
+<%= cl_image_tag @carte_cergy.photo.key, id: 'carte-cergy', alt: 'location-appartements-cergy', class: 'hide-on-small-only' %>
+
+<%= content_for(:footer) do %>
+  <%= render 'shared/footer' %>
+<% end %>

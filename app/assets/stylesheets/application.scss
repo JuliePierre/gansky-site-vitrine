@@ -1,0 +1,16 @@
+// Graphical variables
+@import "config/materialize_variables";
+@import "config/variables";
+
+// External libraries
+@import "materialize/components/color";
+@import 'materialize';
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import 'bootstrap/glyphicons';
+
+// Your CSS
+@import "layout/index";
+@import "components/index";
+@import "pages/index";
+@import "vendor/index";

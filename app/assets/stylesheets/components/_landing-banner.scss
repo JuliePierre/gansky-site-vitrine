@@ -1,0 +1,15 @@
+#landing-banner {
+  height: calc(100vh - 65px);
+  @media (max-width: $small-screen) {
+    height: calc(100vh - 56px);
+  }
+}
+#landing-background {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: white;
+  text-align: center;
+  background-position: center;
+}

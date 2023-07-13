@@ -1,0 +1,92 @@
+#see-flats-button {
+  margin-top: 50px;
+  letter-spacing: -0.05rem;
+  @media (max-width: $small-screen) {
+    margin-top: 20px;
+  }
+}
+#landing-bg-icon {
+  margin-bottom: 20px;
+  @media (max-width: $small-screen) {
+    height: 20px;
+  }
+}
+.header {
+  text-transform: uppercase;
+  font-size: 48px;
+  font-weight: 500;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  @media (max-width: $small-screen) {
+    font-size: 28px;
+  }
+}
+.subtitle {
+  margin-top: 0;
+  font-size: 24px;
+  font-weight: 400;
+  @media (max-width: $small-screen) {
+    font-size: 15px;
+  }
+}
+
+#landing-explanation {
+  padding: 2rem 0;
+  flex: 1 0 auto;
+  display: flex;
+  align-items: center;
+  @media (max-width: $small-screen) {
+    padding: 0.5rem 0;
+  }
+  .explanation-content .content-item {
+    @media (max-width: $small-screen) {
+      padding: 0.5rem 5rem;
+      text-align: center;
+    }
+    @media (max-width: $very-small-screen) {
+      padding: 0 3rem;
+    }
+    .center-flexbox {
+      @media (max-width: $small-screen) {
+        flex-direction: column;
+      }
+      .left-padded {
+        @media (max-width: $small-screen) {
+          padding: 0;
+        }
+      }
+    }
+  }
+}
+#flat-page-explanation {
+  padding: 2rem 0;
+}
+.explanation-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.content-item {
+  flex: 0 0 33%;
+  padding: 0 1rem;
+  font-size: 0.9rem;
+  @media (max-width: $small-screen) {
+    flex: 0 0 100%;
+  }
+}
+.content-header {
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 500;
+}
+#landing-flats{
+  .row .col {
+    padding: 0 1rem;
+    margin-bottom: 1rem;
+  }
+}
+#carte-cergy {
+  width: 100%;
+  display: block;
+}

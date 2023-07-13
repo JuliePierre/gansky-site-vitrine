@@ -1,0 +1,15 @@
+<%= content_for(:navbar) do %>
+  <%= render 'shared/navbar' %>
+<% end %>
+
+
+<div id="confirmation-page">
+  <div class="form-intro container text-center">
+    <%= image_tag "darth_vador.png", class: "darth-vador-picture" %>
+    <h5>Demande enregistrée</h5>
+    <p class="form-question text-center">Nous reviendrons vers vous rapidement.</p>
+    <br>
+    <br>
+    <%= link_to "Retour à la liste des appartements", flats_path(anchor: "landing-flats"), class: 'btn-initial' %>
+  </div>
+</div>

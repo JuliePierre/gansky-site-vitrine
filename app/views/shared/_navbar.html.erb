@@ -1,0 +1,18 @@
+<div class="navbar">
+  <div class="container" id="navbar">
+    <div id="brand">
+      <%= image_tag 'logo-gansky.png' %>
+      <%= link_to "", root_path, class: "full-link" %>
+    </div>
+    <div>
+      <div class="navbar-links">
+        <%= link_to "Accueil", root_path %>
+        <% if request.path == "/" %>
+          <span class="see-flats-button">Les colocs</span>
+        <% else %>
+          <%= link_to "Les colocs", root_path(anchor: "landing-flats") %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
