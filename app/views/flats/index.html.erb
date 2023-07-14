@@ -93,8 +93,9 @@
   </div>
 </div>
 <%#= image_tag 'carte-cergy.png',  %>
-
-<%= cl_image_tag @carte_cergy.photo.key, id: 'carte-cergy', alt: 'location-appartements-cergy', class: 'hide-on-small-only' %>
+<% if @carte_cergy&.photo&.attached? %>
+  <%= cl_image_tag @carte_cergy.photo.key, id: 'carte-cergy', alt: 'location-appartements-cergy', class: 'hide-on-small-only' %>
+<% end %>
 
 <%= content_for(:footer) do %>
   <%= render 'shared/footer' %>
