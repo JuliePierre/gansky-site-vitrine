@@ -34,6 +34,7 @@ gem 'sass-rails'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 
 group :development, :test do
+  gem "dotenv-rails"
   gem 'binding_of_caller'
   gem 'better_errors'
   gem "letter_opener"
@@ -44,5 +45,3 @@ group :development, :test do
   gem 'listen', '~> 3.0.5'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
-
-
