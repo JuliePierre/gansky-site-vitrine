@@ -10,3 +10,7 @@ public/assets
 /config/application.yml
 /config/cloudinary.yml
 .env*
+
+/config/credentials/development.key
+
+/config/master.key
