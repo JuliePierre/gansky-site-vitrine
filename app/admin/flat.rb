@@ -49,24 +49,56 @@ show do
       row :price_per_room
       row :occupied
       row :availability_date
-      row :cover_picture
-      row :virtual_visit_trigger_picture
-      row :map_picture
-      row :funky_picture
-      row :photos
+      row :cover_picture do
+        div do
+          if flat&.cover_picture&.attached?
+            cl_image_tag flat.cover_picture&.key, size: "200x200"
+          else
+            'Aucune'
+          end
+        end
+      end
+      row :virtual_visit_trigger_picture do
+        div do
+          if flat&.virtual_visit_trigger_picture&.attached?
+            cl_image_tag flat&.virtual_visit_trigger_picture&.key, size: "200x200"
+          else
+            'Aucune'
+          end
+        end
+      end
+      row :map_picture do
+        div do
+          if flat&.map_picture&.attached?
+            cl_image_tag flat&.map_picture&.key, size: "200x200"
+          else
+            'Aucune'
+          end
+        end
+      end
+      row :funky_picture do
+        div do
+          if flat&.funky_picture&.attached?
+            cl_image_tag flat&.funky_picture&.key, size: "200x200"
+          else
+            'Aucune'
+          end
+        end
+      end
+     row :photos do
+        div do
+          if flat.photos.attached?
+            flat.photos.each do |img|
+              div do
+                cl_image_tag img&.key, size: "200x200"
+              end
+            end
+          else
+            'Aucune'
+          end
+        end
+      end
       row :virtual_visit
-
-     # row :photos do
-     #    div do
-     #      binding.pry
-     #      flat.photos.each do |img|
-     #        div do
-     #          cl_image_tag img.key, size: "200x200"
-     #        end
-     #      end
-     #    end
-     #  end
-
     end
   panel "Facilities" do
     table_for flat.facilities do
