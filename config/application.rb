@@ -1,5 +1,4 @@
 require_relative 'boot'
-require 'dotenv/load'
 
 require "rails"
 # Pick the frameworks you want:
@@ -17,7 +16,6 @@ require "active_storage/engine"
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
-Dotenv::Railtie.load
 
 module Gansky
   class Application < Rails::Application
