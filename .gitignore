@@ -8,5 +8,8 @@ public/assets
 
 # Ignore application configuration
 /config/application.yml
-/config/cloudinary.yml
 .env*
+
+/config/credentials/development.key
+
+/config/master.key

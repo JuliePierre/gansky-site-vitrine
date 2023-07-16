@@ -26,7 +26,7 @@ permit_params :name, :address, :zipcode, :city, :neighborhood, :description, :su
     f.input :cover_picture, as: :file
     f.input :virtual_visit_trigger_picture, as: :file
     f.input :map_picture, as: :file
-    f.input :funky_picture, as: :file_field, as: :file
+    f.input :funky_picture, as: :file
     f.input :photos, as: :file, input_html: { multiple: true, id: 'photo-input' }
     f.inputs "Facilities" do # Make a panel that holds inputs for lifestyles
     f.input :facilities, as: :check_boxes, collection: Facility.all.map{|facility| [facility.description, facility.id]} # Use formtastic to output my collection of checkboxes
