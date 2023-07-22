@@ -37,74 +37,75 @@ permit_params :name, :address, :zipcode, :city, :neighborhood, :description, :su
     f.actions
   end
 
-show do
-    attributes_table do
-      row :description
-      row :sub_description
-      row :address
-      row :zipcode
-      row :city
-      row :neighborhood
-      row :nb_rooms
-      row :price_per_room
-      row :occupied
-      row :availability_date
-      row :cover_picture do
-        div do
-          if flat&.cover_picture&.attached?
-            cl_image_tag flat.cover_picture&.key, size: "200x200"
-          else
-            'Aucune'
-          end
-        end
-      end
-      row :virtual_visit_trigger_picture do
-        div do
-          if flat&.virtual_visit_trigger_picture&.attached?
-            cl_image_tag flat&.virtual_visit_trigger_picture&.key, size: "200x200"
-          else
-            'Aucune'
-          end
-        end
-      end
-      row :map_picture do
-        div do
-          if flat&.map_picture&.attached?
-            cl_image_tag flat&.map_picture&.key, size: "200x200"
-          else
-            'Aucune'
-          end
-        end
-      end
-      row :funky_picture do
-        div do
-          if flat&.funky_picture&.attached?
-            cl_image_tag flat&.funky_picture&.key, size: "200x200"
-          else
-            'Aucune'
-          end
-        end
-      end
-     row :photos do
-        div do
-          if flat.photos.attached?
-            flat.photos.each do |img|
-              div do
-                cl_image_tag img&.key, size: "200x200"
-              end
+  show do
+      attributes_table do
+        row :description
+        row :sub_description
+        row :address
+        row :zipcode
+        row :city
+        row :neighborhood
+        row :nb_rooms
+        row :price_per_room
+        row :occupied
+        row :availability_date
+        row :cover_picture do
+          div do
+            if flat&.cover_picture&.attached?
+              cl_image_tag flat.cover_picture&.key, size: "200x200"
+            else
+              'Aucune'
             end
-          else
-            'Aucune'
           end
         end
+        row :virtual_visit_trigger_picture do
+          div do
+            if flat&.virtual_visit_trigger_picture&.attached?
+              cl_image_tag flat&.virtual_visit_trigger_picture&.key, size: "200x200"
+            else
+              'Aucune'
+            end
+          end
+        end
+        row :map_picture do
+          div do
+            if flat&.map_picture&.attached?
+              cl_image_tag flat&.map_picture&.key, size: "200x200"
+            else
+              'Aucune'
+            end
+          end
+        end
+        row :funky_picture do
+          div do
+            if flat&.funky_picture&.attached?
+              cl_image_tag flat&.funky_picture&.key, size: "200x200"
+            else
+              'Aucune'
+            end
+          end
+        end
+       row :photos do
+          div do
+            if flat.photos.attached?
+              flat.photos.each do |img|
+                div do
+                  cl_image_tag img&.key, size: "200x200"
+                end
+              end
+            else
+              'Aucune'
+            end
+          end
+        end
+        row :virtual_visit
       end
-      row :virtual_visit
+      
+    panel "Facilities" do
+      table_for flat.facilities do
+        column :description
+      end
     end
-  panel "Facilities" do
-    table_for flat.facilities do
-      column :description
-    end
+    active_admin_comments
   end
-  active_admin_comments
-end
 end
