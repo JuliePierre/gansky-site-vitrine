@@ -13,20 +13,26 @@ permit_params :description, :type, :icon
 #   permitted
 # end
 
-# form do |f|
-#     f.inputs "Infos de base" do
-#       f.input :description
-#       f.input :icon, as: :file ### THERE ####
-#     end
-#     actions
-#   end
-# end
-
-form html: { multipart: true } do |f|
+  form html: { multipart: true } do |f|
     f.inputs "Infos de base" do
       f.input :description
       f.input :icon, as: :file ### THERE ####
     end
     actions
+  end
+
+  show do
+    attributes_table do
+      row :description
+      row :icon do
+        div do
+          if facility&.icon&.attached?
+            cl_image_tag facility.icon&.key, size: "200x200"
+          else
+            'Aucune'
+          end
+        end
+      end
+    end
   end
 end
