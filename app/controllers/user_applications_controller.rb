@@ -9,16 +9,16 @@ class UserApplicationsController < ApplicationController
   def create
     @user_application = UserApplication.new(user_application_params)
     @flat = Flat.friendly.find(params[:flat_id])
-    if params[:user_application]["warrant"][1].nil? || params[:user_application]["visit_needed"][1].nil?
+    if params[:user_application]['warrant'][1].nil? || params[:user_application]['visit_needed'][1].nil?
       render :new
     else
-      @user_application.warrant = ( params[:user_application]["warrant"][1] == "true" )
-      @user_application.visit_needed = ( params[:user_application]["visit_needed"][1] == "true" )
+      @user_application.warrant = (params[:user_application]['warrant'][1] == 'true')
+      @user_application.visit_needed = (params[:user_application]['visit_needed'][1] == 'true')
       @user_application.flat = @flat
       if @user_application.save
         UserMailer.confirmation(@user_application).deliver_now
         UserApplicationMailer.new_application(@user_application, @flat).deliver_now
-        redirect_to  flat_user_application_path(@flat, @user_application)
+        redirect_to flat_user_application_path(@flat, @user_application)
       else
         render :new
       end
