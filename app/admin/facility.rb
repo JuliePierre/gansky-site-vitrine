@@ -3,6 +3,8 @@ ActiveAdmin.register Facility do
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
 permit_params :description, :type, :icon
+has_one_attached :icon
+
 #
 # or
 #
@@ -19,5 +21,4 @@ form do |f|
     end
     actions
   end
-
 end
