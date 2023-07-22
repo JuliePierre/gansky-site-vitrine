@@ -159,7 +159,7 @@
             <% sep = cut + 1 %>
           <% end %>
           <% @flat.facilities[0...sep].each do |facility| %>
-            <% if !facility.icon.attached? %>
+            <% if facility.icon.attached? %>
               <div class="center-flexbox small-margin-bottom">
                 <%= cl_image_tag facility.icon.key, class: "facility-icon" %>
                 <div class="facility-description"><%= facility.description %></div>
@@ -174,7 +174,7 @@
         </div>
         <div class="col s6">
           <% @flat.facilities[sep...@flat.facilities.size].each do |facility| %>
-            <% if !facility.icon.attached? %>
+            <% if facility.icon.attached? %>
               <div class="center-flexbox small-margin-bottom">
                 <%= cl_image_tag facility.icon.key, class: "facility-icon" %>
                 <div class="facility-description"><%= facility.description %></div>

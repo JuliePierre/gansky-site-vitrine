@@ -13,7 +13,16 @@ permit_params :description, :type, :icon
 #   permitted
 # end
 
-form do |f|
+# form do |f|
+#     f.inputs "Infos de base" do
+#       f.input :description
+#       f.input :icon, as: :file ### THERE ####
+#     end
+#     actions
+#   end
+# end
+
+form html: { multipart: true } do |f|
     f.inputs "Infos de base" do
       f.input :description
       f.input :icon, as: :file ### THERE ####
