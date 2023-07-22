@@ -21,15 +21,15 @@ permit_params :name, :address, :zipcode, :city, :neighborhood, :description, :su
 
   form html: { multipart: true } do |f|
     f.inputs "Flats" do
-    f.inputs :except => [:availability_date] # Include the default inputs
-    f.input :availability_date, :as => :string, :input_html => {:class => 'datepicker hasDatePicker'}
-    f.input :cover_picture, as: :file
-    f.input :virtual_visit_trigger_picture, as: :file
-    f.input :map_picture, as: :file
-    f.input :funky_picture, as: :file
-    f.input :photos, as: :file, input_html: { multiple: true, id: 'photo-input' }
-    f.inputs "Facilities" do # Make a panel that holds inputs for lifestyles
-    f.input :facilities, as: :check_boxes, collection: Facility.all.map{|facility| [facility.description, facility.id]} # Use formtastic to output my collection of checkboxes
+      f.inputs :except => [:availability_date] # Include the default inputs
+      f.input :availability_date, :as => :string, :input_html => {:class => 'datepicker hasDatePicker'}
+      f.input :cover_picture, as: :file
+      f.input :virtual_visit_trigger_picture, as: :file
+      f.input :map_picture, as: :file
+      f.input :funky_picture, as: :file
+      f.input :photos, as: :file, input_html: { multiple: true, id: 'photo-input' }
+      f.inputs "Facilities" do # Make a panel that holds inputs for lifestyles
+      f.input :facilities, as: :check_boxes, collection: Facility.all.map{|facility| [facility.description, facility.id]} # Use formtastic to output my collection of checkboxes
     end
     f.actions # Include the default actions
     end
